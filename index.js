@@ -5,6 +5,7 @@ const layouts = require('metalsmith-layouts')
 const multiLanguage = require('metalsmith-multi-language')
 const permalinks = require('metalsmith-permalinks')
 const dateInFilename = require('metalsmith-date-in-filename')
+const collections = require('metalsmith-collections')
 const debug = require('metalsmith-debug')
 
 const DEFAULT_LOCALE = 'en'
@@ -16,6 +17,10 @@ md.use(require('markdown-it-code-embed'), { user: 'julioolvr' })
 metalsmith(__dirname)
   .source('src')
   .destination('dist')
+  .use(collections({
+    posts_en: 'posts/*_en.md',
+    posts_es: 'posts/*_es.md'
+  }))
   .use(multiLanguage({
     default: DEFAULT_LOCALE,
     locales: LOCALES
@@ -34,7 +39,7 @@ metalsmith(__dirname)
   }))
   .use(layouts({
     engine: 'pug',
-    default: 'default.pug',
+    default: 'post.pug',
     pattern: '**/*.html'
   }))
   .use(debug())

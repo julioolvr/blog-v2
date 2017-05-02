@@ -1,0 +1,8 @@
+extends ./default.pug
+
+block extra
+  h2= Posts
+
+  ul
+    each post in collections[`posts_${locale}`]
+      li: a(href=`/${post.path}`)= post.title

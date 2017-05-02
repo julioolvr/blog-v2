@@ -1,0 +1,11 @@
+extends ./default.pug
+
+block extra
+  main: article
+    h1= title
+      - const availableLocales = locales.filter(x => x !== locale && lang(x))
+      if availableLocales.length > 0
+        p Also available in#{' '}
+          each otherLocale, index in availableLocales
+            a(href=`/${lang(otherLocale).path}`)= otherLocale
+    != contents
