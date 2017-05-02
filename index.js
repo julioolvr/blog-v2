@@ -2,7 +2,8 @@ const metalsmith = require('metalsmith')
 const markdown = require('metalsmith-markdown')
 const assets = require('metalsmith-assets')
 const layouts = require('metalsmith-layouts')
-const multiLanguage = require('metalsmith-multi-language');
+const multiLanguage = require('metalsmith-multi-language')
+const permalinks = require('metalsmith-permalinks')
 
 const DEFAULT_LOCALE = 'en'
 const LOCALES = ['en', 'es']
@@ -15,6 +16,9 @@ metalsmith(__dirname)
     locales: LOCALES
   }))
   .use(markdown())
+  .use(permalinks({
+    pattern: ':locale/:title'
+  }))
   .use(assets({
     source: 'assets'
   }))
