@@ -7,8 +7,6 @@ legacyPath: elasticsearch-recreate-index-tests
 
 I fought against this for most of last week so now that I solved it I figured I could share it with the rest of the world (not that I had much fun running tons of Jenkins' builds to see if it was fixed...).
 
-READMORE
-
 So, we have a Rails app that uses ElasticSearch for a few features. There's a single index that we query, and for integration test purposes we create a fake test index so we can go through the whole stack. We are using [Tire](https://github.com/karmi/retire) with its `Persistence` module, so in our `spec_helper.rb` (asuming we have a model called `Book`) we had something along the lines of:
 
 ```ruby
