@@ -6,5 +6,15 @@
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-multi-language": "^0.2.0",
     "pug": "^2.0.0-rc.1"
+  },
+  "devDependencies": {
+    "node-static": "^0.7.9",
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "start": "nodemon -e js,pug,md,css --ignore dist/ --exec \"npm run build:serve\"",
+    "build": "node index.js",
+    "serve": "static dist",
+    "build:serve": "npm run build && npm run serve"
   }
 }
