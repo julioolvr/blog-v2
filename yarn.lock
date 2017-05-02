@@ -1054,6 +1054,13 @@ metalsmith-date-in-filename@^0.0.14:
   dependencies:
     lodash "^2.4.1"
 
+metalsmith-debug@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-debug/-/metalsmith-debug-1.1.0.tgz#6490225703bf45df96cae485b41838022f696849"
+  dependencies:
+    debug "^2.2.0"
+    multimatch "^2.1.0"
+
 metalsmith-layouts@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/metalsmith-layouts/-/metalsmith-layouts-1.8.1.tgz#a365d39939d9146cdfe51fadee7d875573fccbdc"
@@ -1175,7 +1182,7 @@ ms@0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.3.tgz#708155a5e44e33f5fd0fc53e81d0d40a91be1fff"
 
-multimatch@^2.0.0:
+multimatch@^2.0.0, multimatch@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/multimatch/-/multimatch-2.1.0.tgz#9c7906a22fb4c02919e2f5f75161b4cdbd4b2a2b"
   dependencies:
