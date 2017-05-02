@@ -1,10 +1,27 @@
 doctype html
 head
-  title #{title} | Julio
+  if title
+    title #{title} | Julio
+  else
+    title Julio
   meta(charset='utf-8')
   link(rel='stylesheet', href='/css/main.css')
+  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans|Bree+Serif')
+  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto:400,100,300')
+  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Raleway:400,100,300')
   script(async src="//codepen.io/assets/embed/ei.js")
 body
-  header
-    h1 Blog
-  block extra
+  .container
+    header
+      - const url = locale === defaultLocale ? '/' : `/${locale}/`
+      a(href=url)
+        img.profile-pic(src="http://www.gravatar.com/avatar/a81ad64d19c864be3c478b761f4b4817?s=300")
+      ul.bio
+        li: a(href=url) julio olivera
+        li software developer
+        li
+          a(href="http://github.com/julioolvr") github
+          | ,
+          |
+          a(href="http://www.twitter.com/julioolvr") twitter
+    block extra

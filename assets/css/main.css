@@ -1,3 +1,88 @@
+html, body {
+  height: 100%;
+}
+
 body {
-  background-color: pink;
+  background: #fff;
+  text-align: justify;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+a {
+  color: #ff0095;
+  text-decoration: none;
+}
+
+a code {
+  color: #ff0095 !important;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  font-family: "Raleway", serif;
+}
+
+h1, h2, h3, h4 {
+  color: #454545;
+}
+
+h1 a, h1 a:hover,
+h2 a, h2 a:hover,
+h3 a, h3 a:hover,
+h4 a, h4 a:hover {
+  color: #454545;
+  text-decoration: none;
+}
+
+h2, h3, h4 {
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+pre {
+  white-space: pre;
+}
+
+p {
+  line-height: 1.7em;
+  color: #454545;
+}
+
+strong {
+  color: #333;
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  align-items: center;
+  padding-top: 2em;
+}
+
+header .profile-pic {
+  width: 150px;
+  height: 150px;
+  box-shadow: rgba(0,0,0,0.3) 0px 2px 2px;
+}
+
+header .bio {
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 0.75em;
+  line-height: 2em;
+}
+
+.container {
+  max-width: 44em;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
