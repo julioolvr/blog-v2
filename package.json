@@ -2,6 +2,7 @@
   "dependencies": {
     "metalsmith": "^2.3.0",
     "metalsmith-assets": "^0.1.0",
+    "metalsmith-date-in-filename": "^0.0.14",
     "metalsmith-layouts": "^1.8.1",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-multi-language": "^0.2.0",
@@ -15,7 +16,7 @@
   "scripts": {
     "start": "nodemon -e js,pug,md,css --ignore dist/ --exec \"npm run build:serve\"",
     "build": "node index.js",
-    "serve": "static dist",
+    "serve": "static dist -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}'",
     "build:serve": "npm run build && npm run serve"
   }
 }

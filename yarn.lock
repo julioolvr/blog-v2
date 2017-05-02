@@ -1010,6 +1010,10 @@ lodash.restparam@^3.0.0:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
 
+lodash@^2.4.1:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
+
 longest@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
@@ -1043,6 +1047,12 @@ metalsmith-assets@^0.1.0:
     merge "^1.1.3"
     recursive-readdir "^1.0.0"
     stat-mode "^0.2.0"
+
+metalsmith-date-in-filename@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/metalsmith-date-in-filename/-/metalsmith-date-in-filename-0.0.14.tgz#cd89093281f4102df353c0ecbfccf4e1e22fdf77"
+  dependencies:
+    lodash "^2.4.1"
 
 metalsmith-layouts@^1.8.1:
   version "1.8.1"

@@ -4,6 +4,7 @@ const assets = require('metalsmith-assets')
 const layouts = require('metalsmith-layouts')
 const multiLanguage = require('metalsmith-multi-language')
 const permalinks = require('metalsmith-permalinks')
+const dateInFilename = require('metalsmith-date-in-filename')
 
 const DEFAULT_LOCALE = 'en'
 const LOCALES = ['en', 'es']
@@ -15,9 +16,14 @@ metalsmith(__dirname)
     default: DEFAULT_LOCALE,
     locales: LOCALES
   }))
+  .use(dateInFilename())
   .use(markdown())
   .use(permalinks({
-    pattern: ':locale/:title'
+    pattern: ':locale/:date/:title',
+    linksets: [{
+      match: { legacy: true },
+      pattern: ':date/:title'
+    }]
   }))
   .use(assets({
     source: 'assets'
