@@ -1,0 +1,16 @@
+doctype html
+head
+  title Blog - #{title}
+  meta(charset='utf-8')
+  link(rel='stylesheet', href='/css/main.css')
+body
+  header
+    h1 Blog
+  main: article
+    h1= title
+      - const availableLocales = locales.filter(x => x !== locale && lang(x))
+      if availableLocales
+        p Also available in#{' '}
+          each otherLocale, index in availableLocales
+            a(href=`/${lang(otherLocale).path}`)= otherLocale
+    != contents
