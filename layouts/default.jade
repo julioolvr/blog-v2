@@ -1,0 +1,11 @@
+doctype html
+head
+    title Blog - #{title}
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/css/main.css')
+body
+    header
+        h1 Blog
+    main: article
+        h1= title
+        != contents
