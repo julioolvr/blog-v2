@@ -3,6 +3,12 @@ extends ./default.pug
 block extra
   h2= Posts
 
-  ul
-    each post in collections[`posts_${locale}`]
-      li: a(href=`/${post.path}`)= post.title
+  each post in collections[`posts_${locale}`]
+    article.post-summary
+      h2: a(href=`/${post.path}`)= post.title
+      time(datetime=post.date.toISOString())
+        - const year = post.date.getFullYear()
+        - const month = post.date.getMonth() + 1
+        - const day = post.date.getDate()
+        = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
+      div!= post.summary

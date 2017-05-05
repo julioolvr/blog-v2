@@ -86,3 +86,11 @@ header .bio {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* POST LIST */
+
+.post-summary time {
+  color: gray;
+  font-size: 0.75em;
+  line-height: 2em;
+}

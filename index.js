@@ -6,27 +6,44 @@ const multiLanguage = require('metalsmith-multi-language')
 const permalinks = require('metalsmith-permalinks')
 const dateInFilename = require('metalsmith-date-in-filename')
 const collections = require('metalsmith-collections')
+const summary = require('metalsmith-md-summary')
 const debug = require('metalsmith-debug')
 
 const DEFAULT_LOCALE = 'en'
 const LOCALES = ['en', 'es']
 
-const md = markdown()
+const md = markdown({
+  plugin: {
+    fields: ['contents', 'summary']
+  }
+})
 md.use(require('markdown-it-code-embed'), { user: 'julioolvr' })
 
 metalsmith(__dirname)
   .source('src')
   .destination('dist')
   .use(collections({
-    posts_en: 'posts/*_en.md',
-    posts_es: 'posts/*_es.md'
+    posts_en: {
+      pattern: 'posts/*_en.md',
+      sortBy: 'date',
+      reverse: true
+    },
+    posts_es: {
+      pattern: 'posts/*_es.md',
+      sortBy: 'date',
+      reverse: true
+    }
   }))
   .use(multiLanguage({
     default: DEFAULT_LOCALE,
     locales: LOCALES
   }))
   .use(dateInFilename())
+  .use(summary({
+    pattern: 'posts/*.md'
+  }))
   .use(md)
+  .use(debug())
   .use(permalinks({
     pattern: ':locale/:date/:title',
     linksets: [{
@@ -42,7 +59,6 @@ metalsmith(__dirname)
     default: 'post.pug',
     pattern: '**/*.html'
   }))
-  .use(debug())
   .build(err => {
     if (err) { console.error(err) }
   })

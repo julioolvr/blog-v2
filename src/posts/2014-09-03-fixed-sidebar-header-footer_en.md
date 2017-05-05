@@ -10,6 +10,8 @@ sidebar. The application we were building had a preview to the left and the fixe
 right to tweak that preview. The problem to solve is how to give the sidebar the proper height so
 it will scroll its content correctly.
 
+READMORE
+
 The first solution makes use of CSS's [`calc`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc).
 We want our sidebar's height to be 100% MINUS the header and footer's height. It's not uncommon for
 the header's height to be fixed; and given that the footer in this case is fixed too, it probably will
