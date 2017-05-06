@@ -8,6 +8,7 @@ const dateInFilename = require('metalsmith-date-in-filename')
 const collections = require('metalsmith-collections')
 const summary = require('metalsmith-md-summary')
 const debug = require('metalsmith-debug')
+const tags = require('metalsmith-tags')
 const hljs = require('highlight.js')
 
 const DEFAULT_LOCALE = 'en'
@@ -55,7 +56,6 @@ metalsmith(__dirname)
     pattern: 'posts/*.md'
   }))
   .use(md)
-  .use(debug())
   .use(permalinks({
     pattern: ':locale/:date/:title',
     linksets: [{
@@ -63,9 +63,22 @@ metalsmith(__dirname)
       pattern: ':date/:legacyPath'
     }]
   }))
+  .use(tags({
+    path: 'tags/:tag.html',
+    layout: 'tag.pug',
+    sortBy: 'date',
+    reverse: true
+  }))
+  .use(permalinks({
+    linksets: [{
+      match: { layout: 'tag.pug' },
+      pattern: 'tags/:tag'
+    }]
+  }))
   .use(assets({
     source: 'assets'
   }))
+  .use(debug())
   .use(layouts({
     engine: 'pug',
     default: 'post.pug',

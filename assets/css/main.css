@@ -131,3 +131,22 @@ header .bio {
 .post pre {
   font-size: .8em;
 }
+
+.post .tags {
+  font-size: 0.8em;
+  margin-bottom: 2em;
+}
+
+/* POST - BY TAG */
+
+.post-list-by-tag {
+  list-style: none;
+}
+
+.post-list-by-tag time {
+  margin-right: 5px;
+  color: gray;
+  font-style: italic;
+  font-size: 0.75em;
+  line-height: 2em;
+}

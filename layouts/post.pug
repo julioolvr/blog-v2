@@ -8,9 +8,15 @@ block extra
       - const day = date.getDate()
       = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
     h1= title
-      - const availableLocales = locales.filter(x => x !== locale && lang(x))
-      if availableLocales.length > 0
-        p Also available in#{' '}
-          each otherLocale, index in availableLocales
-            a(href=`/${lang(otherLocale).path}`)= otherLocale
+    .tags
+      each tag, index in tags
+        a(href=`/tags/${tag.slug}`)= `#${tag.name}`
+        if index < tags.length - 1
+          | ,
+          |
+    - const availableLocales = locales.filter(x => x !== locale && lang(x))
+    if availableLocales.length > 0
+      p Also available in#{' '}
+        each otherLocale, index in availableLocales
+          a(href=`/${lang(otherLocale).path}`)= otherLocale
     != contents
