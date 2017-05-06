@@ -87,7 +87,16 @@ header .bio {
   margin-right: auto;
 }
 
-/* POST LIST */
+/* POST - SHARED */
+
+.post-summary blockquote, .post blockquote {
+  margin: 1em 3em;
+  color: #999;
+  border-left: 2px solid #999;
+  padding-left: 1em;
+}
+
+/* POST - LIST */
 
 .post-summary h2 {
   margin-bottom: 0;
@@ -99,9 +108,22 @@ header .bio {
   line-height: 2em;
 }
 
-.post-summary blockquote {
-  margin: 1em 3em;
-  color: #999;
-  border-left: 2px solid #999;
-  padding-left: 1em;
+/* POST - SINGLE */
+
+.post h1 {
+  width: 80%;
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 2em;
+}
+
+.post time {
+  color: gray;
+  float: right;
+  font-size: 0.75em;
+  line-height: 2em;
+}
+
+.post img {
+  max-width: 100%;
 }

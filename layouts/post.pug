@@ -1,7 +1,12 @@
 extends ./default.pug
 
 block extra
-  main: article
+  main: article.post
+    time(datetime=date.toISOString())
+      - const year = date.getFullYear()
+      - const month = date.getMonth() + 1
+      - const day = date.getDate()
+      = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
     h1= title
       - const availableLocales = locales.filter(x => x !== locale && lang(x))
       if availableLocales.length > 0
