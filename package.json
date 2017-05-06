@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "gh-pages": "^0.12.0",
     "highlight.js": "^9.11.0",
     "markdown-it-code-embed": "^0.0.8",
     "metalsmith": "^2.3.0",
@@ -23,6 +24,7 @@
     "start": "nodemon -e js,pug,md,css --ignore dist/ --exec \"npm run build:serve\"",
     "build": "node index.js",
     "serve": "static dist -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}'",
-    "build:serve": "npm run build && npm run serve"
+    "build:serve": "npm run build && npm run serve",
+    "publish": "npm run build && node publish.js"
   }
 }
