@@ -127,3 +127,7 @@ header .bio {
 .post img {
   max-width: 100%;
 }
+
+.post pre {
+  font-size: .8em;
+}

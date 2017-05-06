@@ -8,6 +8,7 @@ const dateInFilename = require('metalsmith-date-in-filename')
 const collections = require('metalsmith-collections')
 const summary = require('metalsmith-md-summary')
 const debug = require('metalsmith-debug')
+const hljs = require('highlight.js')
 
 const DEFAULT_LOCALE = 'en'
 const LOCALES = ['en', 'es']
@@ -15,6 +16,17 @@ const LOCALES = ['en', 'es']
 const md = markdown({
   plugin: {
     fields: ['contents', 'summary']
+  },
+  highlight: (str, lang) => {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return '<pre class="hljs"><code>' +
+               hljs.highlight(lang, str, true).value +
+               '</code></pre>'
+      } catch (__) {}
+    }
+
+    return ''
   }
 })
 md.use(require('markdown-it-code-embed'), { user: 'julioolvr' })

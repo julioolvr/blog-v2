@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "highlight.js": "^9.11.0",
     "markdown-it-code-embed": "^0.0.8",
     "metalsmith": "^2.3.0",
     "metalsmith-assets": "^0.1.0",
