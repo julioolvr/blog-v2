@@ -1,8 +1,6 @@
 extends ./default.pug
 
 block extra
-  h2= Posts
-
   each post in collections[`posts_${locale}`]
     article.post-summary
       h2: a(href=`/${post.path}`)= post.title

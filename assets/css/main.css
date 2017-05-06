@@ -89,8 +89,19 @@ header .bio {
 
 /* POST LIST */
 
+.post-summary h2 {
+  margin-bottom: 0;
+}
+
 .post-summary time {
   color: gray;
   font-size: 0.75em;
   line-height: 2em;
+}
+
+.post-summary blockquote {
+  margin: 1em 3em;
+  color: #999;
+  border-left: 2px solid #999;
+  padding-left: 1em;
 }
