@@ -7,8 +7,8 @@ block extra
     each post in pagination.files
       li
         time(datetime=post.date.toISOString())
-          - const year = post.date.getFullYear()
-          - const month = post.date.getMonth() + 1
-          - const day = post.date.getDate()
+          - const year = post.date.getUTCFullYear()
+          - const month = post.date.getUTCMonth() + 1
+          - const day = post.date.getUTCDate()
           = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
         a(href=`/${post.path}`)= post.title
