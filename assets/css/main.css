@@ -79,6 +79,12 @@ header .bio {
   line-height: 2em;
 }
 
+header .langs {
+  font-size: .75em;
+  align-self: flex-start;
+  margin-left: auto;
+}
+
 .container {
   max-width: 44em;
   padding-left: 0;
