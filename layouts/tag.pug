@@ -5,10 +5,28 @@ block extra
 
   ul.post-list-by-tag
     each post in pagination.files
-      li
-        time(datetime=post.date.toISOString())
-          - const year = post.date.getUTCFullYear()
-          - const month = post.date.getUTCMonth() + 1
-          - const day = post.date.getUTCDate()
-          = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
-        a(href=`/${post.path}`)= post.title
+      - const availableLocales = locales.filter(post.lang)
+      if availableLocales.length === 1 || post.locale === locales[0]
+        li
+          time(datetime=post.date.toISOString())
+            - const year = post.date.getUTCFullYear()
+            - const month = post.date.getUTCMonth() + 1
+            - const day = post.date.getUTCDate()
+            = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
+          if availableLocales.length === 1
+            a(href=`/${post.path}`)= post.title
+            span.post-list-by-tag__language
+              if post.lang('en')
+                |  (English)
+              else
+                |  (Español)
+          else
+            span= `${post.title} `
+            span.post-list-by-tag__language
+              | [
+              a(href=`/${post.lang('es').path}`) Español
+              |  |
+              |
+              a(href=`/${post.lang('en').path}`) English
+              | ]
+

@@ -1,6 +1,5 @@
 ---
 title: Thoughts about Vue.js
-tags: javascript, vuejs
 ---
 
 Hace poco fui a un workshop de Vue.js que dio [@ianaya89](https://twitter.com/ianaya89), organizado por la gente de [@workshopsjs](https://twitter.com/workshopsjs). En este post voy a tratar de recopilar lo que saqué del mismo.

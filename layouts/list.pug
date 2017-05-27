@@ -4,9 +4,18 @@ block extra
   each post in collections[`posts_${locale}`]
     article.post-summary
       h2: a(href=`/${post.path}`)= post.title
-      time(datetime=post.date.toISOString())
-        - const year = post.date.getUTCFullYear()
-        - const month = post.date.getUTCMonth() + 1
-        - const day = post.date.getUTCDate()
-        = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
+      .post-details
+        time(datetime=post.date.toISOString())
+          - const year = post.date.getUTCFullYear()
+          - const month = post.date.getUTCMonth() + 1
+          - const day = post.date.getUTCDate()
+          = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
+        - const availableLocales = locales.filter(x => x !== locale && post.lang(x))
+        if availableLocales.length > 0
+          if locale === 'en'
+            div También en#{' '}
+              a(href=`/${post.lang('es').path}`) español
+          else
+            div Also in#{' '}
+              a(href=`/${post.lang('en').path}`) English
       div!= post.summary

@@ -15,7 +15,7 @@ head
 body
   .container
     header
-      - const url = locale === defaultLocale ? '/' : `/${locale}/`
+      - const url = !locale || locale === defaultLocale ? '/' : `/${locale}/`
       a(href=url)
         img.profile-pic(src="http://www.gravatar.com/avatar/a81ad64d19c864be3c478b761f4b4817?s=300")
       ul.bio

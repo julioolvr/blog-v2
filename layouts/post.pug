@@ -2,11 +2,21 @@ extends ./default.pug
 
 block extra
   main: article.post
-    time(datetime=date.toISOString())
-      - const year = date.getUTCFullYear()
-      - const month = date.getUTCMonth() + 1
-      - const day = date.getUTCDate()
-      = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
+    .post-details
+      time(datetime=date.toISOString())
+        - const year = date.getUTCFullYear()
+        - const month = date.getUTCMonth() + 1
+        - const day = date.getUTCDate()
+        = `${year}/${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}`
+      - const availableLocales = locales.filter(x => x !== locale && lang(x))
+      if availableLocales.length > 0
+        if locale === 'en'
+          div Leer en#{' '}
+            a(href=`/${lang('es').path}`) español
+        else
+          div Read in#{' '}
+            a(href=`/${lang('en').path}`) English
+
     h1= title
     .tags
       each tag, index in tags
@@ -14,11 +24,7 @@ block extra
         if index < tags.length - 1
           | ,
           |
-    - const availableLocales = locales.filter(x => x !== locale && lang(x))
-    if availableLocales.length > 0
-      p Also available in#{' '}
-        each otherLocale, index in availableLocales
-          a(href=`/${lang(otherLocale).path}`)= otherLocale
+
     != contents
     .comments
       #disqus_thread
