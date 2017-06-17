@@ -7,7 +7,7 @@ I recently attended a workshop about Vue.js, organized by [@workshopsjs](https:/
 
 READMORE
 
-First of all, the exercises are very good and Ignacio made a really good job making them simple to follow along, so I recommend to anyone wanting to give Vue a try (at least those of you that understand Spanish) to take a look at it at [github.com/ianaya89/workshop-vuejs/](github.com/ianaya89/workshop-vuejs/).
+First of all, the exercises are very good and Ignacio made a really good job making them simple to follow along, so I recommend to anyone wanting to give Vue a try (at least those of you that understand Spanish) to take a look at it at [github.com/ianaya89/workshop-vuejs/](https://github.com/ianaya89/workshop-vuejs/).
 
 My immediate thought after seeing some first code samples is that **the resemblance to Angular 1 is evident**. I've worked with Google's framework for a couple of years and being familiar with it certainly eased the learning curve, as some of the first concepts such as the binding and directives are similar.
 

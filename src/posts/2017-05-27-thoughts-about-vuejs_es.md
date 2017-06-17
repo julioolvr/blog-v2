@@ -6,7 +6,7 @@ Hace poco fui a un workshop de Vue.js que dio [@ianaya89](https://twitter.com/ia
 
 READMORE
 
-Antes que nada, los ejercicios del workshop están muy buenos y el repo que creó Ignacio está muy bien organizado y es muy simple de seguir - así que si alguno está interesado en probar un poco Vue, sugiero revisarlo en [github.com/ianaya89/workshop-vuejs/](github.com/ianaya89/workshop-vuejs/).
+Antes que nada, los ejercicios del workshop están muy buenos y el repo que creó Ignacio está muy bien organizado y es muy simple de seguir - así que si alguno está interesado en probar un poco Vue, sugiero revisarlo en [github.com/ianaya89/workshop-vuejs/](https://github.com/ianaya89/workshop-vuejs/).
 
 Lo primero que se me vino a la cabeza después de ver un poco de código es que **se parece mucho a Angular 1**. Creo que haber trabajado con Angular un par de años me simplificó un poco entender algunos conceptos que maneja Vue, como su forma de hacer el binding dentro de templates y el uso de directivas.
 
