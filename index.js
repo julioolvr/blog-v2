@@ -61,6 +61,9 @@ metalsmith(__dirname)
     linksets: [{
       match: { legacy: true },
       pattern: ':date/:legacyPath'
+    }, {
+      match: { collection: 'pages' },
+      pattern: ':locale/x/:title'
     }]
   }))
   .use(tags({

@@ -57,6 +57,10 @@ strong {
   color: #333;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* HEADER */
 
 header {
@@ -134,10 +138,6 @@ header .langs {
   font-size: 0.75em;
   line-height: 1.5em;
   color: gray;
-}
-
-.post img {
-  max-width: 100%;
 }
 
 .post pre {

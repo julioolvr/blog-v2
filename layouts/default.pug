@@ -27,6 +27,10 @@ body
           | ,
           |
           a(href="http://www.twitter.com/julioolvr") twitter
+          | ,
+          |
+          - const thingsPage = pages.find(page => page.title === 'Things').lang(locale || defaultLocale)
+          a(href=`/${thingsPage.path}`)= thingsPage.title.toLowerCase()
       div.langs
         | [
         a(href='/es') es
@@ -34,3 +38,4 @@ body
         a(href='/') en
         | ]
     block extra
+      main!= contents
